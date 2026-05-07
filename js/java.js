@@ -73,7 +73,7 @@ scene1: {
         next: "scene1"
       }
     ]
-  }
+  },
 
   // Scene 2 - Open email
   scene2: {
