@@ -53,12 +53,12 @@
   // Første rigtige scene i scenariet
 scene1: {
     img: "img/mail.png",
-    text: "You receive a suspicious email.",
+    text: "It is late in the afternoon, and as a student in a vocational education program, you have been working hard all day on an exam assignment. An email appears in your inbox that seems to be from your educational institution. What action you choose?",
 
     choices: [
-      { text: "Red pill", next: "scene2" },
-      { text: "Blue pill", next: "scene3" },
-      { text: "Green pill", next: "scene4" },
+      { text: "Red pill: Open the email to read the content", next: "scene2" },
+      { text: "Blue pill: Ignore the email", next: "scene3" },
+      { text: "Green pill: Report the email as suspicious", next: "scene4" },
       { text: "Hint", next: "keymaker1" }
     ]
   },
