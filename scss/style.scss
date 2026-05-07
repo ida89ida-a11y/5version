@@ -1,0 +1,76 @@
+@use 'partial'; /*Vores partial fil hentes ind som et modul. Det gør det muligt for os at hente og genbruge variabler, mixins og funktioner i andre filer*/
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #0a1f44;
+
+  .logo img {
+    height: 40px;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+
+    li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 80vh;
+  overflow: hidden;
+
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-btn {
+    position: absolute;
+    bottom: 2cm;
+    left: 50%;
+    transform: translateX(-50%);
+
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 6px;
+
+    // Normal gradient (mørk blå → mørk grå)
+    background: linear-gradient(135deg, #0a1f44, #2b2b2b);
+
+    transition: all 0.3s ease;
+
+    &:hover {
+      // Matrix hover (mørk grøn → mørk grå)
+      background: linear-gradient(135deg, #003b1a, #2b2b2b);
+      transform: translateX(-50%) scale(1.05);
+    }
+  }
+}
+
