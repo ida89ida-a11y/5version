@@ -56,7 +56,7 @@ header nav ul li a:hover {
   color: #ffffff;
   cursor: pointer;
   border-radius: 6px;
-  background: linear-gradient(135deg, #0a1f44, #2b2b2b);
+  background: linear-gradient(135deg, #0a2344, #2b2b2b);
   transition: all 0.3s ease;
 }
 .hero .hero-btn:hover {
@@ -64,98 +64,27 @@ header nav ul li a:hover {
   transform: translateX(-50%) scale(1.05);
 }
 
-/* GAME UI */
-body {
-  font-family: Inter, Arial, sans-serif;
-  color: #ffffff;
-  background-color: #050915;
+/* GAME CONTAINER */
+#gameContainer {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
 }
 
-.hidden {
-  display: none !important;
-}
-
-#characterSelect,
-#game-container {
-  max-width: 960px;
-  width: min(92%, 960px);
-  margin: 2rem auto;
-  padding: 1.5rem;
-}
-
-#characterSelect {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 18px;
-  text-align: center;
-}
-
-#characterSelect h2 {
-  margin-bottom: 1rem;
-  font-size: 2rem;
-}
-
-.character-buttons {
-  display: grid;
-  gap: 1rem;
-}
-
-#characterSelect button,
-.choice-btn,
-#game-container .restart-btn {
-  width: 100%;
-  padding: 1rem 1.2rem;
-  border: none;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #0a1f44, #1d3a65);
-  color: #ffffff;
-  font-size: 1rem;
+button {
+  padding: 12px 20px;
+  margin: 8px;
   cursor: pointer;
-  transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-#characterSelect button:hover,
-.choice-btn:hover,
-#game-container .restart-btn:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.05);
+.character-img {
+  width: 250px;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
-.game-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 22px;
-  padding: 2rem;
-}
-
-#game-container h2 {
-  margin-bottom: 1rem;
-  font-size: 2rem;
-}
-
-#game-container img {
-  width: 100%;
-  max-height: 380px;
-  object-fit: cover;
-  border-radius: 18px;
-  margin: 1rem 0;
-}
-
-#game-container p {
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
-}
-
-#choices {
-  display: grid;
-  gap: 1rem;
-}
-
-.choice-btn {
-  text-align: left;
-}
-
-#game-container .restart-btn {
-  margin-top: 1rem;
-}
-/*# sourceMappingURL=style.css.map */
+.character-img:hover {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 15px rgba(0, 255, 98, 0.541));
+}/*# sourceMappingURL=style.css.map */

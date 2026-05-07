@@ -1,8 +1,7 @@
 // Scener
-const scenes = {
  const scenes = {
 
-  // Intro-Scene
+  // Intro
   characterSelect: {
     type: "character",
 
@@ -11,19 +10,17 @@ const scenes = {
     characters: [
       {
         name: "Neo",
-        image: "images/neo.png",
+        image: "img/neo.png",
         next: "neoIntro"
       },
 
       {
         name: "Trinity",
-        image: "images/trinity.png",
+        image: "img/trinity.png",
         next: "trinityIntro"
       }
     ]
   },
-
-
 
   // Neo-intro
   neoIntro: {
@@ -31,13 +28,12 @@ const scenes = {
 
     text: "You chose Neo",
 
-    gif: "images/neo.gif",
+    gif: "img/neogif.gif",
 
     buttonText: "I'm in",
 
     next: "scene1"
   },
-
 
 
   // Trinity-intro
@@ -46,7 +42,7 @@ const scenes = {
 
     text: "You chose Trinity",
 
-    gif: "images/trinity.gif",
+    gif: "img/trinitygif.gif",
 
     buttonText: "Let's go",
 
@@ -54,8 +50,7 @@ const scenes = {
   },
 
 
-
-  // Første scene i scenariet
+  // Første rigtige scene i scenariet
   scene1: {
     text: "You receive a suspicious email.",
 
@@ -82,8 +77,79 @@ let selectedCharacter = "";
 //Funktioner
 function showScene(sceneId) {
 
-}
+  const scene = scenes[sceneId];
+  const container = document.getElementById("gameContainer");
 
+  container.innerHTML = "";
+
+  console.log(scene);
+
+  // 1. TEXT (hvis den findes)
+  if (scene.text) {
+    const text = document.createElement("p");
+    text.textContent = scene.text;
+    container.appendChild(text);
+  }
+
+  // 2. CHARACTER SELECT
+  if (scene.type === "character") {
+
+    scene.characters.forEach(char => {
+
+    const card = document.createElement("div");
+    card.classList.add("character-card");
+
+    const img = document.createElement("img");
+    img.src = char.image;
+    img.classList.add("character-img");
+
+    const name = document.createElement("p");
+    name.textContent = char.name;
+
+    card.appendChild(img);
+    card.appendChild(name);
+
+    card.addEventListener("click", () => {
+      showScene(char.next);
+    });
+
+    container.appendChild(card);
+  });
+  }
+
+  // 3. INTRO SCENES
+  if (scene.type === "intro") {
+
+    const gif = document.createElement("img");
+    gif.src = scene.gif;
+
+    const btn = document.createElement("button");
+    btn.textContent = scene.buttonText;
+
+    btn.addEventListener("click", () => {
+      showScene(scene.next);
+    });
+
+    container.appendChild(gif);
+    container.appendChild(btn);
+  }
+
+  // 4. CHOICES (scene1 osv)
+  if (scene.choices) {
+
+    scene.choices.forEach(choice => {
+
+      const btn = document.createElement("button");
+      btn.textContent = choice.text;
+
+      btn.addEventListener("click", () => {
+        showScene(choice.next);
+      });
+
+      container.appendChild(btn);
+    });
+  }
+}
 
 //Listeners
 document.getElementById("startButton").addEventListener("click", () => {
@@ -94,4 +160,3 @@ document.getElementById("startButton").addEventListener("click", () => {
   showScene("characterSelect");
 
 });
-
