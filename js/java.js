@@ -59,7 +59,7 @@ scene1: {
       { text: "Red pill: Open the email to read the content", next: "scene2" },
       { text: "Blue pill: Ignore the email", next: "scene3" },
       { text: "Green pill: Report the email as suspicious", next: "scene4" },
-      { text: "Hint", next: "keymaker1" }
+      { text: "Hint", next: "keymaker1" },
     ]
   },
 
@@ -75,7 +75,18 @@ scene1: {
     ]
   }
 
-};
+  // Scene 2 - Open email
+  scene2: {
+    img: "img/smithgif.gif",
+    text: "You proberbly shouldn't have opened the email. are. What action do you choose?",
+
+    choices: [
+      { text: "Red pill: Click the link to log in", next: "scene5" },
+      { text: "Blue pill: Go back and examine the email", next: "scene3" },
+      { text: "Green pill: Go back", next: "scene4" },
+    ]
+  }
+}
 
 //Variabler
 let currentScene = "characterSelect";
@@ -92,7 +103,7 @@ function showScene(sceneId) {
 
   console.log(scene);
 
-  // 1. Tekst
+// 1. Tekst
   if (scene.text) {
     const text = document.createElement("p");
     text.textContent = scene.text;
