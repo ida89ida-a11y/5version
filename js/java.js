@@ -51,18 +51,26 @@
 
 
   // Første rigtige scene i scenariet
-  scene1: {
+scene1: {
+    img: "img/mail.png",
     text: "You receive a suspicious email.",
 
     choices: [
-      {
-        text: "Red pill",
-        next: "scene2"
-      },
+      { text: "Red pill", next: "scene2" },
+      { text: "Blue pill", next: "scene3" },
+      { text: "Green pill", next: "scene4" },
+      { text: "Hint", next: "keymaker1" }
+    ]
+  },
 
+  keymaker1: {
+    img: "img/keymaker.png",
+    text: "The Keymaker appears: 'Be careful. Phishing emails often look real.'",
+
+    choices: [
       {
-        text: "Blue pill",
-        next: "scene3"
+        text: "Back",
+        next: "scene1"
       }
     ]
   }
@@ -84,14 +92,28 @@ function showScene(sceneId) {
 
   console.log(scene);
 
-  // 1. TEXT (hvis den findes)
+  // 1. Tekst
   if (scene.text) {
     const text = document.createElement("p");
     text.textContent = scene.text;
     container.appendChild(text);
   }
 
-  // 2. CHARACTER SELECT
+// 2. Billede
+if (scene.img) {
+  const img = document.createElement("img");
+  img.src = scene.img;
+
+  // styling
+  img.style.maxWidth = "300px";
+  img.style.display = "block";
+  img.style.margin = "10px auto";
+
+  container.appendChild(img);
+}
+
+
+  // 3. CHARACTER SELECT
   if (scene.type === "character") {
 
     scene.characters.forEach(char => {
@@ -117,7 +139,7 @@ function showScene(sceneId) {
   });
   }
 
-  // 3. INTRO SCENES
+  // 4. INTRO SCENES
   if (scene.type === "intro") {
 
     const gif = document.createElement("img");
@@ -134,7 +156,7 @@ function showScene(sceneId) {
     container.appendChild(btn);
   }
 
-  // 4. CHOICES (scene1 osv)
+  // 5. CHOICES (scene1 osv)
   if (scene.choices) {
 
     scene.choices.forEach(choice => {
@@ -153,10 +175,8 @@ function showScene(sceneId) {
 
 //Listeners
 document.getElementById("startButton").addEventListener("click", () => {
-
   document.getElementById("gameContainer")
     .scrollIntoView({ behavior: "smooth" });
 
   showScene("characterSelect");
-
 });
