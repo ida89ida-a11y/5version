@@ -85,7 +85,31 @@ scene1: {
       { text: "Blue pill: Go back and examine the email", next: "scene3" },
       { text: "Green pill: Go back", next: "scene4" },
     ]
-  }
+  },
+
+  // Scene 3 - Click the link
+scene3: {
+     img: "img/2svar.png",
+    text: "The exam-stress has got the better of you, and you click without thinking. What action do you choose?",
+
+    choices: [
+      { text: "Red pill: I don't think about anything other than being able to handin the exam paper, so I click on the link that I think will lead me to the shcools log in page", next: "scene2" },
+      { text: "Blue pill: Examine the email", next: "scene3" },
+      { text: "Hint", next: "keymaker1" },
+    ]
+  },
+
+  keymaker1: {
+    img: "img/keymaker.png",
+    text: "The Keymaker appears: 'Be careful. Some hackers try to lull you into a false sense of security.'",
+
+    choices: [
+      {
+        text: "Back",
+        next: "scene1"
+      }
+    ]
+  },
 }
 
 //Variabler
