@@ -311,8 +311,14 @@ if (scene.img) {
 }
 
 
-// 3. CHARACTER SELECT
+// 3. karaktervalg
   if (scene.type === "character") {
+
+    const characterWrapper = document.createElement("div");
+
+characterWrapper.classList.add("character-selection");
+
+container.appendChild(characterWrapper);
 
     scene.characters.forEach(char => {
 
@@ -333,11 +339,11 @@ if (scene.img) {
       showScene(char.next);
     });
 
-    container.appendChild(card);
+    characterWrapper.appendChild(card);
   });
   }
 
-// 4. INTRO SCENES
+// 4. Intro scener
   if (scene.type === "intro") {
 
     const gif = document.createElement("img");
@@ -354,7 +360,7 @@ if (scene.img) {
     container.appendChild(btn);
   }
 
-// 5. CHOICES (scene1 osv)
+// 5. Choices
   if (scene.choices) {
 
     scene.choices.forEach(choice => {

@@ -1,4 +1,13 @@
-@use 'partial'; /*Vores partial fil hentes ind som et modul. Det gør det muligt for os at hente og genbruge variabler, mixins og funktioner i andre filer*/
+/* The Matrix Variabler */
+$matrix-green: #00ff88;
+$dark-bg: #111;
+$text-color: #f5f5f5;
+
+/* Mixins */
+@mixin neon-glow {
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.5);
+}
+
 
 /* RESET */
 * {
@@ -78,18 +87,76 @@ header {
 /* GAME CONTAINER */
 
 #gameContainer {
+  width: 90%;
+  max-width: 900px;
+
+  margin: 50px auto;
+  padding: 40px;
+
+  background-color: #111;
+  border: 2px solid #00ff88;
+
+  border-radius: 20px;
+
+  text-align: center;
+
   display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
-button {
-  padding: 12px 20px;
-  margin: 8px;
+#gameContainer img {
+  width: 100%;
+  max-width: 850px;
+
+  border-radius: 15px;
+
+  @include neon-glow;
+}
+
+
+#gameContainer button {
+  padding: 15px 25px;
+
+  background-color: transparent;
+  color: $matrix-green;
+
+  border: 2px solid $matrix-green;
+  border-radius: 10px;
+
   cursor: pointer;
+
+  font-size: 16px;
+
+  transition: 0.3s ease;
 }
 
+#gameContainer button:hover {
+  background-color: $matrix-green;
+  color: #111;
+
+  transform: scale(1.1);
+}
+
+#gameContainer p {
+  color: $text-color;
+
+  font-size: 18px;
+  line-height: 1.6;
+
+  max-width: 700px;
+}
+
+.character-card {
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.character-card:hover {
+  transform: scale(1.08);
+}
 
 .character-img {
   width: 250px;   
@@ -102,5 +169,10 @@ button {
   filter: drop-shadow(0 0 15px rgba(0, 255, 98, 0.541));
 }
 
+.character-selection {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
 
 
