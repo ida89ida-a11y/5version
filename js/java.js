@@ -156,8 +156,32 @@ img: "img/wd.gif",
         { text: "Red pill: Check if your system is updated", next: "scene7" },
         { text: "Blue pill: Delete the email", next: "scene8" },
     ]
+},
 
-} 
+
+// Scene 8 - Check if system is updated
+scene8: {
+    img: "img/3svar.png",
+    text: "System updates often include security patches that protect against known vulnerabilities. The only thing is that you havn't really dealt with the email from the mysterious sender. Youre still in the game. What do you do?",
+
+    choices: [
+      { text: "Red pill: Message all of your classmates and tell them about the suspicious email", next: "scene2" },
+      { text: "Blue pill: Delete the email", next: "scene5" },
+      { text: "Green pill", next: "goodEnding1" }
+    ]
+  },
+
+goodEnding1: {
+  img: "img/good1.png",
+  text: "You managed to successfully keep your computer safe from cyberattacks! By reporting the email and ensuring your system is updated, you protected yourself and others from potential harm. Congratulations, you win!!",
+
+  choices: [
+    {
+      text: "Play again",
+      next: "characterSelect"
+    }
+  ]
+},
 
  };
 
