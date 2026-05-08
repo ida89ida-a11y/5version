@@ -216,15 +216,15 @@ scene9: {
     text: "Your system warns you about updates that havn't yet been installed. What do you do?",
 
     choices: [
-      { text: "Red pill: You check your system for updates", next: "scene2" },
-      { text: "Blue pill: You report the email as suspicious", next: "scene5" },
+      { text: "Red pill: You check your system for updates", next: "scene8" },
+      { text: "Blue pill: You report the email as suspicious", next: "scene6" },
       { text: "Green pill: You delete the message. You are too buisy with your exam paper to pay attention to updates.", next: "scene11" },
       { text: "Hint", next: "keymaker4" },
     ]
   },
 
 keymaker4: {
-    img: "img/know.jpeg",
+    img: "img/know.jpg",
     text: "The Keymaker appears: 'Software updates are essential for maintaining security.'",
 
     choices: [
@@ -250,8 +250,29 @@ scene10: {
 
   },
 
-
+// Scene 11 - Ignoring the email
+scene11: {
+    img: "img/smithgif.gif",
+    text: "You notice that you keep receiving new emails from the same sender. What do you wanna do?",
   
+    choices: [
+      { text: "You delete them all", next: "badEnding2" },
+      { text: "Blue pill: You are beginning to feel unsure about weather the email is legitimate, and youwant to take a look at it again", next: "scene3" },
+      { text: "Green pill: You report the email as suspicious", next: "scene7" },
+    ]
+},
+
+ badEnding2: {
+  img: "img/as.jpg",
+  text: "After a few days, you notice that your computer has become slower. Your pc didn't have the latest security updates wich made it vulnerable to a malware attack. Your computer has been infected with malware. Game over!",
+  choices: [
+    {
+      text: "Restart game",
+      next: "characterSelect"
+    }
+  ]
+},
+
   };
  
 //Variabler
