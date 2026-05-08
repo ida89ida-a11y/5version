@@ -179,14 +179,14 @@ scene8: {
     text: "System updates often include security patches that protect against known vulnerabilities. The only thing is that you havn't really dealt with the email from the mysterious sender. Youre still in the game. What do you do?",
 
     choices: [
-      { text: "Red pill: Message all of your classmates and tell them about the suspicious email", next: "scene2" },
-      { text: "Blue pill: Delete the email", next: "scene5" },
-      { text: "Green pill", next: "goodEnding1" }
+      { text: "Red pill: Message all of your classmates and tell them about the suspicious email", next: "scene10" },
+      { text: "Blue pill: Delete the email", next: "scene11" },
+      { text: "Green pill: You report the email as suspicious", next: "goodEnding2" }
     ]
   },
 
 goodEnding1: {
-  img: "img/good1.png",
+  img: "img/bingo.png",
   text: "You managed to successfully keep your computer safe from cyberattacks! By reporting the email and ensuring your system is updated, you protected yourself and others from potential harm. Congratulations, you win!!",
 
   choices: [
@@ -197,9 +197,62 @@ goodEnding1: {
   ]
 },
 
+goodEnding2: {
+  img: "img/good1.png",
+  text: "You are a cybersecurity master! Great job keeping your system updated and reporting the suspicious email. You know how to stay safe in the cyberworld! Congratulations, you win!!",
 
- };
+  choices: [
+    {
+      text: "Let's play again",
+      next: "characterSelect"
+    }
+  ]
+},
 
+
+// Scene 9 - Keep ignoring the email
+scene9: {
+    img: "img/smithgif.gif",
+    text: "Your system warns you about updates that havn't yet been installed. What do you do?",
+
+    choices: [
+      { text: "Red pill: You check your system for updates", next: "scene2" },
+      { text: "Blue pill: You report the email as suspicious", next: "scene5" },
+      { text: "Green pill: You delete the message. You are too buisy with your exam paper to pay attention to updates.", next: "scene11" },
+      { text: "Hint", next: "keymaker4" },
+    ]
+  },
+
+keymaker4: {
+    img: "img/know.jpeg",
+    text: "The Keymaker appears: 'Software updates are essential for maintaining security.'",
+
+    choices: [
+      {
+        text: "Back",
+        next: "scene9"
+      }
+    ]
+  },
+
+
+
+ // Scene 10 - You warn your classmates 
+scene10: {
+    img: "img/smithgif.gif",
+    text: "You write to all of your classmates and warn them about the suspicious email. It's a kind gesture. But you can still recieve suspicious emails from the same sender. What do you wanna do?",
+
+    choices: [
+      { text: "Red pill: You report the email as suspicious", next: "scene9" },
+      { text: "Blue pill: You focus on your exam paper and ignore the email", next: "badEnding2" },
+
+    ]
+
+  },
+
+
+  
+  };
  
 //Variabler
 let currentScene = "characterSelect";
