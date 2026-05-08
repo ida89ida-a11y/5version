@@ -95,7 +95,7 @@ scene3: {
     choices: [
       { text: "Red pill: I don't think about anything else than handing in the exam paper, so I click on the link that I think will lead me to the shcools log in page", next: "scene2" },
       { text: "Blue pill: Examine the email", next: "scene5" },
-      { text: "Hint", next: "keymaker1" },
+      { text: "Hint", next: "keymaker2" },
     ]
   },
 
@@ -106,7 +106,7 @@ scene3: {
     choices: [
       {
         text: "Back",
-        next: "scene2"
+        next: "scene3"
       }
     ]
   },
@@ -155,8 +155,22 @@ img: "img/wd.gif",
         choices: [
         { text: "Red pill: Check if your system is updated", next: "scene7" },
         { text: "Blue pill: Delete the email", next: "scene8" },
+        { text: "Hint", next: "keymaker3" },
+
     ]
 },
+
+keymaker3: {
+    img: "img/keymaker.png",
+    text: "The Keymaker appears: 'Your cybersecurity depends on your systems being up to date. If I could give one piece of advice, it would be to always keep your software up to date.'",
+
+    choices: [
+      {
+        text: "Back",
+        next: "scene7"
+      }
+    ]
+  },
 
 
 // Scene 8 - Check if system is updated
@@ -182,6 +196,7 @@ goodEnding1: {
     }
   ]
 },
+
 
  };
 
