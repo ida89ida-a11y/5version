@@ -81,9 +81,9 @@ scene1: {
     text: "You proberbly shouldn't have opened the email. are. What action do you choose?",
 
     choices: [
-      { text: "Red pill: Click the link to log in", next: "scene5" },
-      { text: "Blue pill: Go back and examine the email", next: "scene3" },
-      { text: "Green pill: Go back", next: "scene4" },
+      { text: "Red pill: Click the link to log in", next: "scene3" },
+      { text: "Blue pill: Go back and examine the email", next: "scene4" },
+      { text: "Green pill: Go back", next: "scene1" },
     ]
   },
 
@@ -93,23 +93,49 @@ scene3: {
     text: "The exam-stress has got the better of you, and you click without thinking. What action do you choose?",
 
     choices: [
-      { text: "Red pill: I don't think about anything other than being able to handin the exam paper, so I click on the link that I think will lead me to the shcools log in page", next: "scene2" },
-      { text: "Blue pill: Examine the email", next: "scene3" },
+      { text: "Red pill: I don't think about anything else than handing in the exam paper, so I click on the link that I think will lead me to the shcools log in page", next: "scene2" },
+      { text: "Blue pill: Examine the email", next: "scene5" },
       { text: "Hint", next: "keymaker1" },
     ]
   },
 
-  keymaker1: {
+  keymaker2: {
     img: "img/keymaker.png",
     text: "The Keymaker appears: 'Be careful. Some hackers try to lull you into a false sense of security.'",
 
     choices: [
       {
         text: "Back",
-        next: "scene1"
+        next: "scene2"
       }
     ]
   },
+
+  // Scene 4 - Sign in to fake student account 
+scene4: {
+         img: "img/smithgif.gif",
+    text: "You click the link to log in, and you are taken to a page that looks exactly like your school's login page. What action do you choose?",
+
+    choices: [
+      { text: "Red pill: I can hardly think straight before exams and so I enter my login details", next: "badEnding1" },
+      { text: "Blue pill: I go back andexamine the email", next: "scene5" },
+    
+    ]
+  },
+
+  badEnding1: {
+  img: "img/bad1.jpg",
+  text: "You clicked the phishing link. Suddenly the screen freezes, and you see a message that says 'Your computer is locked. Please pay to unlock it.' You have fallen victim to a ransomware attack. Game over.",
+
+  choices: [
+    {
+      text: "Try again",
+      next: "characterSelect"
+    }
+  ]
+},
+
+
 }
 
 //Variabler
