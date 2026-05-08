@@ -143,10 +143,13 @@ scene6: {
     choices: [
         { text: "Report email as suspicious", next: "scene7" },
         { text: "Tjek if your system is updated", next: "scene8" },
-        { text: "Keep ignoring it and focus on your studies", next: "scene1" },
+        { text: "Keep ignoring it and focus on your studies", next: "scene9" },
     ]
 },
 
+ };
+
+ 
 //Variabler
 let currentScene = "characterSelect";
 let selectedCharacter = "";
