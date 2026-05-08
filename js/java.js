@@ -57,8 +57,8 @@ scene1: {
 
     choices: [
       { text: "Red pill: Open the email to read the content", next: "scene2" },
-      { text: "Blue pill: Ignore the email", next: "scene3" },
-      { text: "Green pill: Report the email as suspicious", next: "scene4" },
+      { text: "Blue pill: Ignore the email", next: "scene6" },
+      { text: "Green pill: Report the email as suspicious", next: "scene7" },
       { text: "Hint", next: "keymaker1" },
     ]
   },
@@ -129,14 +129,23 @@ scene4: {
 
   choices: [
     {
-      text: "Try again",
+      text: "Play again",
       next: "characterSelect"
     }
   ]
 },
 
+// Scene 6 - Ignore the email
+scene6: {
+  img: "img/welldone00.gif",
+  text: "It's good that you didn't open the email. However, ignoring it doesn't protect you from future threats. You're still in the game",
 
-}
+    choices: [
+        { text: "Report email as suspicious", next: "scene7" },
+        { text: "Tjek if your system is updated", next: "scene8" },
+        { text: "Keep ignoring it and focus on your studies", next: "scene1" },
+    ]
+},
 
 //Variabler
 let currentScene = "characterSelect";
