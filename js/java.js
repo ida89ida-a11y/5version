@@ -93,7 +93,7 @@ scene3: {
     text: "The exam-stress has got the better of you, and you click without thinking. What action do you choose?",
 
     choices: [
-      { text: "Red pill: I don't think about anything else than handing in the exam paper, so I click on the link that I think will lead me to the shcools log in page", next: "scene2" },
+      { text: "Red pill: You don't think about anything else than handing in the exam paper, so you click on the link that you think will lead me to the shcools log in page", next: "scene2" },
       { text: "Blue pill: Examine the email", next: "scene5" },
       { text: "Hint", next: "keymaker2" },
     ]
@@ -153,8 +153,8 @@ img: "img/wd.gif",
     text: "Great choice! Reporting the email helps protect others from falling victim to the same attack. You're still in the game. What do you wanna do?",
 
         choices: [
-        { text: "Red pill: Check if your system is updated", next: "scene7" },
-        { text: "Blue pill: Delete the email", next: "scene8" },
+        { text: "Red pill: Check if your system is updated", next: "scene8" },
+        { text: "Blue pill: Delete the email", next: "badEnding2" },
         { text: "Hint", next: "keymaker3" },
 
     ]
@@ -176,11 +176,11 @@ keymaker3: {
 // Scene 8 - Check if system is updated
 scene8: {
     img: "img/3svar.png",
-    text: "System updates often include security patches that protect against known vulnerabilities. The only thing is that you havn't really dealt with the email from the mysterious sender. Youre still in the game. What do you do?",
+    text: "Good that you updated the sytem! System updates often include security patches that protect against known vulnerabilities. The only thing is that you havn't really dealt with the email from the mysterious sender. Youre still in the game. What do you do?",
 
     choices: [
       { text: "Red pill: Message all of your classmates and tell them about the suspicious email", next: "scene10" },
-      { text: "Blue pill: Delete the email", next: "scene11" },
+      { text: "Blue pill: Delete the email", next: "badEnding2" },
       { text: "Green pill: You report the email as suspicious", next: "goodEnding2" }
     ]
   },
@@ -217,8 +217,8 @@ scene9: {
 
     choices: [
       { text: "Red pill: You check your system for updates", next: "scene8" },
-      { text: "Blue pill: You report the email as suspicious", next: "scene6" },
-      { text: "Green pill: You delete the message. You are too buisy with your exam paper to pay attention to updates.", next: "scene11" },
+      { text: "Blue pill: You report the email as suspicious", next: "scene7" },
+      { text: "Green pill: You delete the message. You are too buisy with your exam paper to pay attention to updates.", next: "badEnding2" },
       { text: "Hint", next: "keymaker4" },
     ]
   },
@@ -243,7 +243,7 @@ scene10: {
     text: "You write to all of your classmates and warn them about the suspicious email. It's a kind gesture. But you can still recieve suspicious emails from the same sender. What do you wanna do?",
 
     choices: [
-      { text: "Red pill: You report the email as suspicious", next: "scene9" },
+      { text: "Red pill: You report the email as suspicious", next: "scene7" },
       { text: "Blue pill: You focus on your exam paper and ignore the email", next: "badEnding2" },
 
     ]

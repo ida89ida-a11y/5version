@@ -206,3 +206,36 @@ footer {
   backdrop-filter: blur(8px);
 }
 
+/* Media Queries */
+@media (max-width: 768px) {
+
+  #gameContainer {
+    padding: 20px;
+    width: 95%;
+  }
+
+  #gameContainer p {
+    font-size: 16px;
+  }
+
+  #gameContainer button {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .character-selection {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .character-img {
+    width: 180px !important;
+  }
+
+  #gameContainer img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+}
+

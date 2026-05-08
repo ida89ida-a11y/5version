@@ -156,4 +156,30 @@ footer {
   box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.4);
   border-top: 1px solid rgba(0, 255, 136, 0.2);
   backdrop-filter: blur(8px);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  #gameContainer {
+    padding: 20px;
+    width: 95%;
+  }
+  #gameContainer p {
+    font-size: 16px;
+  }
+  #gameContainer button {
+    width: 100%;
+    font-size: 16px;
+  }
+  .character-selection {
+    flex-direction: column;
+    align-items: center;
+  }
+  .character-img {
+    width: 180px !important;
+  }
+  #gameContainer img {
+    width: 100%;
+    max-width: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */
