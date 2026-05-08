@@ -137,15 +137,27 @@ scene4: {
 
 // Scene 6 - Ignore the email
 scene6: {
-  img: "img/welldone00.gif",
+  img: "img/wd.gif",
   text: "It's good that you didn't open the email. However, ignoring it doesn't protect you from future threats. You're still in the game",
 
     choices: [
-        { text: "Report email as suspicious", next: "scene7" },
-        { text: "Tjek if your system is updated", next: "scene8" },
-        { text: "Keep ignoring it and focus on your studies", next: "scene9" },
+        { text: "Red pill: Report email as suspicious", next: "scene7" },
+        { text: "Blue pill: Check if your system is updated", next: "scene8" },
+        { text: "Green pill: Keep ignoring it and focus on your exam paper", next: "scene9" },
     ]
 },
+
+// Scene 7 - Report email as suspicious
+scene7: {
+img: "img/wd.gif",
+    text: "Great choice! Reporting the email helps protect others from falling victim to the same attack. You're still in the game. What do you wanna do?",
+
+        choices: [
+        { text: "Red pill: Check if your system is updated", next: "scene7" },
+        { text: "Blue pill: Delete the email", next: "scene8" },
+    ]
+
+} 
 
  };
 
@@ -186,7 +198,7 @@ if (scene.img) {
 }
 
 
-  // 3. CHARACTER SELECT
+// 3. CHARACTER SELECT
   if (scene.type === "character") {
 
     scene.characters.forEach(char => {
@@ -212,7 +224,7 @@ if (scene.img) {
   });
   }
 
-  // 4. INTRO SCENES
+// 4. INTRO SCENES
   if (scene.type === "intro") {
 
     const gif = document.createElement("img");
@@ -229,7 +241,7 @@ if (scene.img) {
     container.appendChild(btn);
   }
 
-  // 5. CHOICES (scene1 osv)
+// 5. CHOICES (scene1 osv)
   if (scene.choices) {
 
     scene.choices.forEach(choice => {
